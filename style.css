@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gloria+Hallelujah&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+.container {
+    font-family: sans-serif;
+    text-align: center;
+    width: 30vw;
+    padding: 60px;
+    background-color: palevioletred;
+    border-radius: 20px;
+}
+
+.container h1 {
+    color: white;
+    font-size: 1.7rem;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+#jokeButton {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+#jokeButton span {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#jokeButton:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+#jokeButton:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Glow Effect */
+#jokeButton::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    animation: glow 2s infinite;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+#jokeButton:hover span {
+    animation: bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+#jokeOutput {
+    margin-top: 20px;
+    font-size: 18px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    color: black;
+    font-weight: bold;
+    display: none;
+}
+
+@media (max-width: 782px) {
+    .container {
+        width: 80%;
+    }
+}
